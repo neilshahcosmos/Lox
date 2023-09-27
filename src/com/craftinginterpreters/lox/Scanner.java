@@ -83,6 +83,7 @@ public class Scanner {
                 } else if(match('*')) {
                     advance();
                     while(!(peek() == '*' && peekNext() == '/') && !isAtEnd()) {
+                        if(peek() == '\n') { ++line; }
                         advance();
                     }
                     if(!isAtEnd()) {
